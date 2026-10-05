@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Pedro vs Juan</title>
+<style>
+  :root { --bg:#f4f5f3; --ink:#1f2a2e; --line:#d5d9d6; --acc:#4d6b45; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--ink); font:14px/1.4 system-ui,sans-serif; }
+  header { display:flex; flex-wrap:wrap; gap:8px 16px; align-items:center; padding:8px 16px; border-bottom:1px solid var(--line); }
+  header strong { margin-right:auto; }
+  select, button { font:inherit; padding:4px 8px; border:1px solid var(--line); border-radius:6px; background:#fff; color:var(--ink); cursor:pointer; }
+  button[aria-pressed="true"] { background:var(--acc); color:#fff; border-color:var(--acc); }
+  main { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); height:calc(100% - 49px); }
+  main.solo-a { grid-template-columns:1fr 0; } main.solo-b { grid-template-columns:0 1fr; }
+  section { display:flex; flex-direction:column; background:#fff; min-width:0; }
+  section h2 { margin:0; padding:6px 12px; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.05em; border-bottom:1px solid var(--line); }
+  iframe { flex:1; width:100%; border:0; }
+  @media (max-width:800px) { main { grid-template-columns:1fr; grid-template-rows:1fr 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <strong>Pedro (la web actual) vs Juan (propuesta)</strong>
+  <label>Sección
+    <select id="seccion">
+      <option value="">Inicio</option>
+      <option value="metodo" selected>Método</option>
+    </select>
+  </label>
+  <button data-vista="ambas" aria-pressed="true">Ambas</button>
+  <button data-vista="solo-a" aria-pressed="false">Solo Pedro</button>
+  <button data-vista="solo-b" aria-pressed="false">Solo Juan</button>
+</header>
+<main id="marco">
+  <section><h2>Pedro — la web actual, 1-oct-2026</h2><iframe id="a" title="Versión de Pedro"></iframe></section>
+  <section><h2>Juan — propuesta con la paleta B</h2><iframe id="b" title="Versión de Juan"></iframe></section>
+</main>
+<script>
+  const fuentes = { a: 'pedro/index.html', b: 'juan/index.html' };
+  const sel = document.getElementById('seccion');
+  // Rellena el selector con las secciones que tenga la versión de Pedro
+  fetch(fuentes.a).then(r => r.text()).then(html => {
+    const ids = [...html.matchAll(/id="([a-z][\w-]*)"/g)].map(m => m[1]);
+    const enlaces = [...html.matchAll(/href="#([\w-]+)"/g)].map(m => m[1]);
+    [...new Set(enlaces)].filter(id => ids.includes(id) && id !== 'metodo').forEach(id => sel.add(new Option(id[0].toUpperCase() + id.slice(1), id)));
+  }).catch(() => {});
+  function cargar() {
+    const h = sel.value ? '#' + sel.value : '';
+    for (const k in fuentes) document.getElementById(k).src = fuentes[k] + h;
+  }
+  sel.addEventListener('change', cargar);
+  document.querySelectorAll('[data-vista]').forEach(b => b.addEventListener('click', () => {
+    document.getElementById('marco').className = b.dataset.vista === 'ambas' ? '' : b.dataset.vista;
+    document.querySelectorAll('[data-vista]').forEach(x => x.setAttribute('aria-pressed', x === b));
+  }));
+  cargar();
+</script>
+</body>
+</html>

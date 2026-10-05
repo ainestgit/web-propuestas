@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Propuestas de la web</title>
+<style>
+  :root { --bg:#F4F5F1; --sup:#FFFFFF; --ink:#1B2E30; --ink2:#4B5A58; --line:#D5DBD4; --musgo:#2E6B63; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif; }
+  main { max-width:880px; margin:0 auto; padding:56px 16px 72px; }
+  h1 { font-size:34px; line-height:1.15; margin:0 0 12px; font-weight:600; }
+  .intro { color:var(--ink2); max-width:40rem; margin:0 0 32px; }
+  .versiones { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  a.tarjeta { display:block; background:var(--sup); border:1px solid var(--line); border-radius:12px; padding:24px; color:inherit; text-decoration:none; }
+  a.tarjeta:hover { border-color:var(--ink2); }
+  a.tarjeta:focus-visible { outline:2px solid var(--musgo); outline-offset:3px; }
+  .etq { display:inline-block; font-size:13px; font-weight:600; padding:3px 8px; border-radius:4px; background:#E4E8E2; margin-bottom:12px; }
+  .tarjeta h2 { font-size:24px; margin:0 0 6px; font-weight:600; }
+  .tarjeta p { margin:0; color:var(--ink2); font-size:16px; }
+  a.comparar { display:flex; justify-content:space-between; align-items:center; gap:16px; background:var(--musgo); color:#fff; border-radius:12px; padding:20px 24px; text-decoration:none; font-weight:600; }
+  a.comparar:focus-visible { outline:2px solid var(--ink); outline-offset:3px; }
+  .nota { margin-top:32px; font-size:14px; color:var(--ink2); }
+  @media (max-width:640px) { .versiones { grid-template-columns:1fr; } h1 { font-size:28px; } }
+</style>
+</head>
+<body>
+<main>
+  <h1>Propuestas de la web de AI Nest</h1>
+  <p class="intro">Dos versiones de la página para comparar antes de decidir. Ninguna de las dos es la web publicada en ainest.es.</p>
+  <div class="versiones">
+    <a class="tarjeta" href="pedro/"><span class="etq">pedro</span><h2>Versión de Pedro</h2><p>La web actual, tal como estaba el 1 de octubre de 2026.</p></a>
+    <a class="tarjeta" href="juan/"><span class="etq">juan</span><h2>Versión de Juan</h2><p>Paleta B, más corta y con bloques de datos, equipo y preguntas.</p></a>
+  </div>
+  <a class="comparar" href="comparar.html"><span>Ver las dos lado a lado</span><span aria-hidden="true">→</span></a>
+  <p class="nota">Datos de los ejemplos ficticios. Los textos en amarillo de la versión de Juan son huecos pendientes de confirmar. Lista de cambios de Juan: <a href="https://github.com/ainestgit/web-propuestas/blob/main/juan/CAMBIOS.md">CAMBIOS.md</a>.</p>
+</main>
+</body>
+</html>
