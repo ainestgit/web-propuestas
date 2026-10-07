@@ -224,8 +224,8 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 /* Cifras grandes */
 .cifras { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 0 0 72px; padding-bottom: 56px; border-bottom: 1px solid var(--inv-linea, var(--linea)); }
 .cifras > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 8px; }
-.cifras dd { margin: 0; font: 500 64px/1 var(--serif); letter-spacing: -.02em; color: var(--inv-texto); font-variant-numeric: lining-nums; }
-.cifras dd span { font-size: .45em; letter-spacing: 0; margin-left: .1em; }
+.cifras dd { margin: 0; font: 500 32px/1.1 var(--serif); letter-spacing: -.01em; color: var(--inv-texto); font-variant-numeric: lining-nums; }
+.cifras dd span { font-size: .6em; letter-spacing: 0; margin-left: .1em; }
 .cifras dt { font-size: 16px; line-height: 1.45; color: var(--inv-texto-2); max-width: 16rem; }
 
 /* ---------- Escenas animadas ---------- */
@@ -287,7 +287,7 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
 .kpi { background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--r-ctl); padding: 16px; }
 .kpi .t { font-size: 14px; color: var(--texto-2); }
-.kpi .v { font: 500 34px/1.1 var(--serif); margin: 6px 0 4px; font-variant-numeric: tabular-nums; }
+.kpi .v { font: 500 28px/1.1 var(--serif); margin: 6px 0 4px; font-variant-numeric: tabular-nums; }
 .kpi .d { font-size: 13px; color: var(--texto-2); }
 .graficas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
 .graf { background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--r-ctl); padding: 16px; position: relative; }
@@ -440,7 +440,7 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
   .hero .wrap, .ficha, .graficas, .sim, .met-rej, .reserva { grid-template-columns: 1fr; gap: 40px; }
   .lista-dolor, .fases, .compromisos, .equipo { grid-template-columns: 1fr; }
   .cifras { grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-bottom: 56px; padding-bottom: 40px; }
-  .cifras dd { font-size: 44px; }
+  .cifras dd { font-size: 24px; }
   .nido { width: 78px; height: 63px; margin-bottom: 20px; }
   .equipo { gap: 40px; }
   .met-rej { margin-top: 56px; }
@@ -456,7 +456,8 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
   .tabla .det dl { grid-template-columns: 1fr 1fr; }
   .tabs { padding: 0 4px; gap: 0; }
   .tabs button { flex: 1 1 auto; padding: 14px 5px 12px; font-size: 14px; }
-  .kpi .v { font-size: 28px; }
+  .kpi .v { font-size: 24px; }
+  .sim .res b { font-size: 22px; }
   .graf .eje { font-size: 22px; }
   .graf .val { font-size: 24px; }
   .graf .punto { r: 7; stroke-width: 3; }
