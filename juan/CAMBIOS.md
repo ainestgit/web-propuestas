@@ -17,7 +17,9 @@ Para verla junto a la de Pedro: `propuestas/comparar.html` servido desde la raí
 - **Tus datos, en claro:** cuatro compromisos sobre dónde se tratan los datos, proveedores, propiedad y normativa.
 - **Quién está detrás:** fichas de los socios.
 - **Preguntas frecuentes:** coste, plazos, qué necesito, datos y qué pasa si no funciona.
-- Reserva en dos columnas sobre pizarra: qué pasa en la llamada junto al calendario.
+- Reserva sobre pizarra con una tarjeta compacta (30 min, Google Meet, sin coste). El calendario de Google ya no está incrustado en la página: se abre en una ventana propia al pulsar «Elegir día y hora».
+- El símbolo del nido en el hero: el contenedor se dibuja al cargar y el punto óxido cae al final. Es la única animación autónoma; el punto del logo ya no se anima.
+- El método sobre fondo pizarra, para dar ritmo a la página, con cuatro cifras grandes: 2 semanas, precio cerrado, 0 horas facturadas, 100 % tuyo. En fondo oscuro el óxido pasa a su versión clara (#E39A73).
 - Menú con Datos y Equipo; en móvil, botón «Reservar» siempre visible.
 - Pie con huecos para los datos de empresa.
 

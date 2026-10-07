@@ -8,6 +8,7 @@
     menu();
     document.querySelectorAll('figure.peli').forEach(escena);
     document.querySelectorAll('.panel-app').forEach(panel);
+    reserva();
   });
 
   /* ---------- Menú móvil ---------- */
@@ -24,6 +25,23 @@
     document.addEventListener('keydown', function (ev) {
       if (ev.key === 'Escape' && n.classList.contains('abierta')) { abrir(false); b.focus(); }
     });
+  }
+
+  /* ---------- Reserva: el calendario de Google en un diálogo ---------- */
+  function reserva() {
+    var d = document.querySelector('.reserva-dlg');
+    if (!d || typeof d.showModal !== 'function') return; // sin <dialog>, el enlace abre otra pestaña
+    var f = d.querySelector('iframe');
+    f.addEventListener('load', function () { if (f.src) d.classList.add('cargado'); });
+    document.querySelectorAll('[data-reserva]').forEach(function (b) {
+      b.addEventListener('click', function (ev) {
+        ev.preventDefault();
+        if (!f.src) f.src = f.getAttribute('data-src');
+        d.showModal();
+      });
+    });
+    d.querySelector('[data-cerrar]').addEventListener('click', function () { d.close(); });
+    d.addEventListener('click', function (ev) { if (ev.target === d) d.close(); });
   }
 
   /* ---------- Escenas animadas ---------- */

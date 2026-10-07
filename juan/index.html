@@ -9,8 +9,8 @@
 <link rel="icon" href="assets/favicon-final.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500..600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=b2-1">
-<script src="assets/sitio.js?v=b2-1" defer></script>
+<link rel="stylesheet" href="assets/estilos.css?v=b2-3">
+<script src="assets/sitio.js?v=b2-2" defer></script>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -38,6 +38,7 @@
 <section class="hero" aria-labelledby="hero-t">
   <div class="wrap">
     <div>
+      <svg class="nido" viewBox="6 12 52 42" aria-hidden="true"><path class="nido-c" d="M10 30 a22 20 0 0 0 44 0"/><circle class="nido-p" cx="32" cy="39" r="5.5"/></svg>
       <h1 id="hero-t">Inteligencia artificial para tu empresa, con los pies en el suelo.</h1>
       <p class="entradilla">Consultoría de procesos para empresas de 10 a 250 personas. Primero entendemos cómo trabaja tu equipo; después ponemos agentes y automatizaciones dentro de tus procesos, y nos quedamos hasta que funcionan.</p>
       <div class="acciones">
@@ -262,9 +263,15 @@
   </div>
 </section>
 
-<section class="sec" id="metodo" aria-labelledby="met-t">
+<section class="sec inv metodo" id="metodo" aria-labelledby="met-t">
   <div class="wrap">
     <div class="cab"><span class="eti">El método</span><h2 id="met-t">Entender la empresa antes de intervenir en ella.</h2><p class="entradilla">Todo empieza con un diagnóstico de dos semanas sobre un área de tu empresa. Termina con un plan y la primera intervención definida, con alcance, plazo y precio.</p></div>
+    <dl class="cifras">
+      <div><dt>Dura el diagnóstico</dt><dd>2 <span>semanas</span></dd></div>
+      <div><dt>Precio por servicio, por escrito antes de empezar</dt><dd>Cerrado</dd></div>
+      <div><dt>Horas facturadas: pagas el servicio, no el tiempo</dt><dd>0</dd></div>
+      <div><dt>De lo construido es tuyo: cuentas, claves y datos</dt><dd>100 <span>%</span></dd></div>
+    </dl>
     <ol class="fases">
       <li class="fase"><svg class="fase-i" viewBox="0 0 64 64" aria-hidden="true"><path class="cont" d="M10 30 a22 20 0 0 0 44 0"/><circle class="pt-v" cx="32" cy="36" r="6"/></svg>
         <h3><span class="sr-only">Paso 1. </span>Acotar</h3><div class="cuando">Primer día</div>
@@ -410,17 +417,28 @@
   <div class="wrap reserva">
     <div class="reserva-txt">
       <h2 id="ct-t">Reserva una llamada.</h2>
-      <p class="entradilla">Media hora por Google Meet, sin compromiso.</p>
+      <p class="entradilla">Media hora por Google Meet, sin compromiso. Te atiende uno de los socios.</p>
       <ol class="pasos-reserva">
         <li><b>Eliges un hueco</b><p>Te llega la invitación con el enlace.</p></li>
         <li><b>Hablamos</b><p>Nos cuentas cómo trabaja hoy tu equipo y qué te gustaría cambiar.</p></li>
         <li><b>Te decimos por dónde empezar</b><p>Un diagnóstico o una primera intervención, con alcance, plazo y precio. Si no hay por dónde empezar, también te lo diremos.</p></li>
       </ol>
-      <p class="peq">¿No se ve el calendario? <a href="https://calendar.app.google/MqYEUEZGK61Rq3Xw8" target="_blank" rel="noopener">Ábrelo en otra pestaña</a> o escríbenos a <span class="hueco">[correo]</span>.</p>
     </div>
-    <div class="reserva-marco"><iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0hixBW1y-EKjQx8Lv0T7QgpUGbObrr3pDQ0T1iGMIzHOgsRLGkf8tgPMy1dKaI333oD3jni59W?gv=true&amp;hl=es" title="Calendario para reservar una llamada por Google Meet" loading="lazy"></iframe></div>
+    <div class="reserva-card">
+      <ul class="reserva-datos">
+        <li><span class="k">Duración</span><span>30 minutos</span></li>
+        <li><span class="k">Dónde</span><span>Google Meet</span></li>
+        <li><span class="k">Coste</span><span>Sin coste ni compromiso</span></li>
+      </ul>
+      <a class="btn btn-pri btn-ancho" href="https://calendar.app.google/MqYEUEZGK61Rq3Xw8" target="_blank" rel="noopener" data-reserva>Elegir día y hora</a>
+      <p class="peq">Ves los huecos libres y reservas en un minuto. ¿Prefieres escribir? <span class="hueco">[correo]</span></p>
+    </div>
   </div>
 </section>
+<dialog class="reserva-dlg" aria-labelledby="dlg-t">
+  <div class="dlg-cab"><h2 id="dlg-t">Elige día y hora</h2><button type="button" class="dlg-cerrar" data-cerrar>Cerrar</button></div>
+  <div class="dlg-cuerpo"><p class="dlg-carga">Cargando el calendario…</p><iframe data-src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0hixBW1y-EKjQx8Lv0T7QgpUGbObrr3pDQ0T1iGMIzHOgsRLGkf8tgPMy1dKaI333oD3jni59W?gv=true&amp;hl=es" title="Calendario para reservar una llamada por Google Meet"></iframe></div>
+</dialog>
 </main>
 
 <footer class="pie">

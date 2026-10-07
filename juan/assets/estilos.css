@@ -107,8 +107,6 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .marca-tx .i { position: relative; display: inline-block; }
 .marca-tx .i::after { content: ''; position: absolute; left: 50%; top: -.02em; width: .2em; height: .2em; margin-left: -.1em; border-radius: 50%; background: var(--acento); }
 .marca-tx .ns { font-weight: 400; color: var(--musgo); }
-.carga .site .marca-tx .i::after { animation: punto 700ms var(--curva) 400ms both; }
-@keyframes punto { from { transform: translateY(-.35em) scale(.4); opacity: 0; } to { transform: none; opacity: 1; } }
 .logo .bj { font: 500 13px/1.3 var(--sans); color: var(--texto-2); border-left: 1px solid var(--linea); padding-left: 12px; }
 
 /* ---------- Cabecera ---------- */
@@ -125,6 +123,14 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .hero { padding: 96px 0 88px; }
 .hero .wrap { display: grid; grid-template-columns: 1.15fr .85fr; gap: 64px; align-items: center; }
 .hero h1 { max-width: 15ch; }
+/* El nido se dibuja al cargar y el punto óxido cae al final: la única animación autónoma de la web. */
+.nido { display: block; width: 104px; height: 84px; margin: 0 0 28px -6px; overflow: visible; }
+.nido-c { fill: none; stroke: var(--texto); stroke-width: 2.5; stroke-linecap: round; stroke-dasharray: 80; stroke-dashoffset: 0; }
+.nido-p { fill: var(--acento); }
+.nido-c { animation: trazo 1100ms var(--curva) 200ms both; }
+.nido-p { animation: huevo 600ms var(--curva) 1200ms both; }
+@keyframes trazo { from { stroke-dashoffset: 80; } to { stroke-dashoffset: 0; } }
+@keyframes huevo { from { transform: translateY(-28px); opacity: 0; } 60% { opacity: 1; } to { transform: none; opacity: 1; } }
 .hero .entradilla { margin-top: 24px; }
 .confianza { margin: 24px 0 0; font-size: 15px; color: var(--texto-2); }
 
@@ -200,6 +206,27 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .dims > div { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); }
 .dims dt { font-weight: 600; font-size: 17px; }
 .dims dd { margin: 0; font-size: 17px; color: var(--texto-2); }
+
+/* Método sobre pizarra: el óxido pasa a su versión clara (6,17:1) */
+.metodo { --inv-linea: #3A5052; --oxido-claro: #E39A73; }
+.metodo .eti { color: var(--inv-texto-2); }
+.metodo .fase { border-top-color: var(--inv-texto); }
+.metodo .fase-i .cont { stroke: var(--inv-texto); }
+.metodo .fase-i .pt { fill: var(--oxido-claro); }
+.metodo .fase-i .pt-v { stroke: var(--inv-texto-2); }
+.metodo .fase .cuando { color: var(--oxido-claro); }
+.metodo .destacado { background: rgba(244, 245, 241, .08); color: var(--inv-texto); }
+.metodo .destacado b { color: var(--inv-texto); }
+.metodo .reglas, .metodo .dims, .metodo .reglas li, .metodo .dims > div { border-color: var(--inv-linea); }
+.metodo .reglas li b, .metodo .dims dt { color: var(--inv-texto); }
+.metodo .reglas li, .metodo .dims dd { color: var(--inv-texto-2); }
+
+/* Cifras grandes */
+.cifras { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 0 0 72px; padding-bottom: 56px; border-bottom: 1px solid var(--inv-linea, var(--linea)); }
+.cifras > div { display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 8px; }
+.cifras dd { margin: 0; font: 500 64px/1 var(--serif); letter-spacing: -.02em; color: var(--inv-texto); font-variant-numeric: lining-nums; }
+.cifras dd span { font-size: .45em; letter-spacing: 0; margin-left: .1em; }
+.cifras dt { font-size: 16px; line-height: 1.45; color: var(--inv-texto-2); max-width: 16rem; }
 
 /* ---------- Escenas animadas ---------- */
 .peli { margin: 0; background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--r-caja); overflow: hidden; }
@@ -346,14 +373,30 @@ table.tabla { width: 100%; border-collapse: collapse; font-size: 14px; min-width
 .faq details p { margin: 0 0 22px; color: var(--texto-2); max-width: var(--lectura); }
 
 /* ---------- Reserva ---------- */
-/* El iframe es de otro dominio y no se ajusta solo: la altura sigue a lo que mide
-   la página de citas de Google a cada ancho (~1250 px desde 700 px, ~1730 px en móvil). */
-.reserva { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; }
-.reserva-txt { position: sticky; top: 112px; }
+/* El calendario de Google no se incrusta en la página: se abre en un diálogo propio
+   al pulsar el botón, y solo entonces se carga. Sin JavaScript, el botón abre la
+   página de reservas en otra pestaña. */
+.reserva { display: grid; grid-template-columns: 1.1fr .9fr; gap: 64px; align-items: center; }
 .reserva-txt .entradilla { margin-top: 20px; }
-.reserva-marco { background: var(--blanco); border-radius: var(--r-caja); overflow: hidden; }
-.reserva-marco iframe { display: block; width: 100%; height: 1300px; border: 0; }
-.pasos-reserva { list-style: none; counter-reset: pr; padding: 0; margin: 32px 0; display: grid; gap: 20px; }
+.reserva-card { background: var(--superficie); color: var(--texto); border-radius: var(--r-caja); padding: 32px; }
+.sec.inv .reserva-card p { color: var(--texto-2); }
+.reserva-datos { list-style: none; margin-bottom: 24px; border-top: 1px solid var(--linea); }
+.reserva-datos li { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--linea); font-size: 16px; }
+.reserva-datos .k { color: var(--texto-2); }
+.sec.inv .reserva-card a.btn-pri { color: var(--sobre-cta); }
+.btn-ancho { width: 100%; }
+.reserva-card .peq { margin: 16px 0 0; }
+.reserva-dlg { width: min(760px, calc(100vw - 32px)); height: min(900px, calc(100vh - 48px)); padding: 0; border: 0; border-radius: var(--r-caja); background: var(--superficie); box-shadow: 0 24px 64px rgba(16, 27, 28, .35); overflow: hidden; }
+.reserva-dlg[open] { display: flex; flex-direction: column; }
+.reserva-dlg::backdrop { background: rgba(16, 27, 28, .6); }
+.dlg-cab { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 14px 16px 14px 24px; border-bottom: 1px solid var(--linea); }
+.dlg-cab h2 { font-size: 23px; }
+.dlg-cerrar { background: none; border: 1px solid var(--linea-fuerte); border-radius: var(--r-ctl); padding: 9px 14px; min-height: 40px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.dlg-cuerpo { position: relative; flex: 1; }
+.dlg-carga { position: absolute; inset: 0; display: grid; place-items: center; margin: 0; color: var(--texto-2); font-size: 16px; }
+.reserva-dlg.cargado .dlg-carga { display: none; }
+.reserva-dlg iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.pasos-reserva { list-style: none; counter-reset: pr; padding: 0; margin: 32px 0 0; display: grid; gap: 20px; }
 .pasos-reserva li { counter-increment: pr; position: relative; padding-left: 40px; }
 .pasos-reserva li::before { content: counter(pr); position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--inv-texto-2); display: grid; place-items: center; font: 600 13px/1 var(--sans); }
 .pasos-reserva b { font-size: 17px; }
@@ -372,7 +415,7 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
 
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
-  .fases, .compromisos { grid-template-columns: repeat(2, 1fr); }
+  .fases, .compromisos, .cifras { grid-template-columns: repeat(2, 1fr); }
   .peli .lienzo { grid-template-columns: 1fr 1fr; }
   .peli .lienzo > :first-child { grid-column: 1 / -1; }
   .kpis { grid-template-columns: repeat(2, 1fr); }
@@ -396,6 +439,9 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
   .hero { padding: 48px 0 64px; }
   .hero .wrap, .ficha, .graficas, .sim, .met-rej, .reserva { grid-template-columns: 1fr; gap: 40px; }
   .lista-dolor, .fases, .compromisos, .equipo { grid-template-columns: 1fr; }
+  .cifras { grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-bottom: 56px; padding-bottom: 40px; }
+  .cifras dd { font-size: 44px; }
+  .nido { width: 78px; height: 63px; margin-bottom: 20px; }
   .equipo { gap: 40px; }
   .met-rej { margin-top: 56px; }
   .dims > div { grid-template-columns: 1fr; gap: 2px; }
@@ -415,12 +461,10 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
   .graf .val { font-size: 24px; }
   .graf .punto { r: 7; stroke-width: 3; }
   .graf .linea { stroke-width: 3.5; }
-  .reserva-txt { position: static; }
-  .reserva-marco { margin: 0 calc(-1 * var(--medianil)); border-radius: 0; }
+  .reserva-card { padding: 24px; }
+  .reserva-dlg { width: 100vw; height: 100dvh; max-width: none; max-height: none; border-radius: 0; }
   footer.pie .wrap { grid-template-columns: 1fr; gap: 24px; }
 }
-@media (max-width: 740px) { .reserva-marco iframe { height: 1320px; } }
-@media (max-width: 560px) { .reserva-marco iframe { height: 1800px; } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 1ms !important; animation-delay: 0ms !important; transition-duration: 1ms !important; scroll-behavior: auto !important; }
