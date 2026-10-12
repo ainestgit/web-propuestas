@@ -55,4 +55,3 @@ La narrativa y el porqué de la estructura están en [`NARRATIVA.md`](NARRATIVA.
 
 - **Dirección de IA externa:** sigue como sexto servicio. El 09/10 quedó en duda si es un servicio propio o lo que se vende después de una implantación. No tiene responsable.
 - **Agente y panel:** son ejemplos con datos ficticios, rotulados como tales. El filtro W1 dice «nada que no hayamos hecho todavía», así que hay que confirmar que se pueden enseñar.
-- **Óxido:** sigue pendiente frente a la regla de Joaquín de «nada de rojo ni coral».

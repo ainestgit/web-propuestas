@@ -33,7 +33,6 @@ Se mantienen sin cambios: el entregable de ejemplo, las tres escenas animadas, l
 - Pie: razón social, CIF, dirección, correo y teléfono. Enlaces legales.
 
 ## Decisiones abiertas
-1. **Óxido y la restricción de Joaquín** («nada de rojo ni coral»). En esta versión el óxido solo aparece en el punto del logo, las fechas del método y el indicador de las escenas.
-2. **Texto de la franja de logos.** «Ya trabajan con nosotros» solo si hay encargo real. Si fueron pilotos o favores, mejor «Han probado nuestro método». Con menos de 3 logos, quitar la franja.
-3. **Eslogan junto al logo:** se mantiene «Transformación digital con IA». «Consultoría de procesos que aplica IA» encaja mejor con el nuevo hero.
-4. **Precio:** la FAQ promete «una horquilla en la primera llamada». Confirmar que se quiere decir así.
+1. **Texto de la franja de logos.** «Ya trabajan con nosotros» solo si hay encargo real. Si fueron pilotos o favores, mejor «Han probado nuestro método». Con menos de 3 logos, quitar la franja.
+2. **Eslogan junto al logo:** se mantiene «Transformación digital con IA». «Consultoría de procesos que aplica IA» encaja mejor con el nuevo hero.
+3. **Precio:** la FAQ promete «una horquilla en la primera llamada». Confirmar que se quiere decir así.
