@@ -27,7 +27,7 @@ La narrativa y el porqué de la estructura están en [`NARRATIVA.md`](NARRATIVA.
 ## Otros cambios
 
 - **Equipo:** perfiles a partir del «Quiénes somos» de la v12 de Jorge, sin «Think Ahead» (filtro W1).
-  - Adrián aparece sin nombre ni foto, como «el quinto socio» con su experiencia pasada (una Fortune 50). Es su propuesta del 07/10 y hay que confirmarla con él.
+  - Los cinco socios con nombre de pila, Adrián incluido (12/10). Sin apellidos ni empresa actual, como los demás. El 07/10 Adrián dijo que no podía aparecer con su trabajo actual; aparece solo con experiencia pasada (una Fortune 50) y conviene que lo vea antes de publicar.
 - **Inicio:** tres diferencias, tres pasos (llamada, diagnóstico, primera intervención), tarjetas de los seis servicios y las caras del equipo.
 - **Cómo trabajamos:** «Lo que hace distinto nuestro diagnóstico» sustituye a las cinco dimensiones. Según `best-practices-externos/diagnostico.md`, las cinco que usaba la web se parecen a las de Intención, y el marco propio lo define Joaquín.
 - **Preguntas frecuentes,** en la pestaña de reserva, con una pregunta nueva: «¿El diagnóstico es gratis?». La llamada sí; el diagnóstico es de pago (D1).
@@ -43,10 +43,21 @@ La narrativa y el porqué de la estructura están en [`NARRATIVA.md`](NARRATIVA.
 - **Fotos** de Joaquín, Juan y Jorge, sacadas de `Brand-Identity-/AI_Nest_Web_v12/fotos`. Pedro no tiene foto en ningún repositorio. Las tres tienen estilos distintos; una sesión común las igualaría.
 - **«Tus datos», todo pendiente de confirmar.** Cada compromiso lleva su marca y la página abre con un aviso: falta el informe sobre IA y RGPD y la revisión legal.
 
+## Revisión técnica del 12/10
+
+- **Adrián,** quinto socio en Equipo y en las caras de Inicio, que ahora son cinco.
+- **Jerarquía de títulos sin saltos:** h2 para lectores de pantalla en Equipo, Tus datos y la lista de servicios, y las gráficas del panel pasan de h4 a h3.
+- **Pie:** los huecos legales ya no son enlaces a `#`, que llevaban a ninguna parte.
+- **Metadatos:** Open Graph (título, descripción, idioma y nombre del sitio) para que el enlace se vea bien en WhatsApp y LinkedIn, y `theme-color` para la barra del navegador en móvil.
+- **Botones** de las pestañas del panel con `type="button"`.
+- **CSS:** fuera 23 reglas que no usaba ninguna página (restos de la v1).
+- **Fotos:** en Equipo cargan al momento; en Inicio, en diferido.
+- **Textos de las seis páginas revisados** frente a las reglas acordadas: sin empresas actuales, apellidos, «Think Ahead», proveedores, FUNDAE, mantenimiento ni importes propios. Los euros que aparecen son de las demos con datos ficticios.
+
 ## Por rellenar (en amarillo en la página)
 
-- **Fotos:** la de Pedro.
-- **Adrián:** confirmar si aparece y cómo.
+- **Fotos:** las de Pedro y Adrián.
+- **Adrián:** que vea su ficha antes de publicar.
 - **Logos:** el texto de la franja y los logos, con permiso de cada empresa.
 - **Datos:** dónde se tratan, el acuerdo de no entrenamiento y la persona de contacto de privacidad.
 - **Datos de empresa:** correo, razón social, CIF, dirección y textos legales.

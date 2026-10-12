@@ -156,11 +156,6 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .logos-l img { max-height: 32px; width: auto; filter: grayscale(1); opacity: .7; }
 .logo-hueco { display: grid; place-items: center; width: 100%; height: 48px; border: 1px dashed var(--linea-fuerte); border-radius: var(--r-ctl); font: 500 14px/1 var(--sans); color: var(--texto-2); }
 
-/* ---------- Problema ---------- */
-.lista-dolor { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 64px; }
-.lista-dolor > div { padding: 28px 0; border-top: 1px solid var(--linea); }
-.lista-dolor h3 { font-size: 23px; margin-bottom: 10px; }
-.lista-dolor p { color: var(--texto-2); margin: 0; }
 
 /* ---------- Servicios (plegables) ---------- */
 .plegable { border-top: 1px solid var(--linea); }
@@ -198,15 +193,7 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .fase .cuando { font: 500 14px/1.3 var(--sans); color: var(--acento); }
 .fase p { color: var(--texto-2); font-size: 17px; margin: 10px 0 0; }
 .destacado { margin: 48px 0 0; padding: 20px 24px; background: var(--banda); border-radius: var(--r-caja); max-width: 52rem; font-size: 18px; }
-.met-rej { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; margin-top: 72px; }
 .met-h { font-size: 24px; margin-bottom: 16px; }
-.reglas { list-style: none; border-top: 1px solid var(--linea); }
-.reglas li { padding: 14px 0; border-bottom: 1px solid var(--linea); font-size: 17px; color: var(--texto-2); }
-.reglas li b { color: var(--texto); }
-.dims { margin: 0; border-top: 1px solid var(--linea); }
-.dims > div { display: grid; grid-template-columns: 120px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--linea); }
-.dims dt { font-weight: 600; font-size: 17px; }
-.dims dd { margin: 0; font-size: 17px; color: var(--texto-2); }
 
 /* Método sobre pizarra: el óxido pasa a su versión clara (6,17:1) */
 .metodo { --inv-linea: #3A5052; --oxido-claro: #E39A73; }
@@ -218,9 +205,6 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .metodo .fase .cuando { color: var(--oxido-claro); }
 .metodo .destacado { background: rgba(244, 245, 241, .08); color: var(--inv-texto); }
 .metodo .destacado b { color: var(--inv-texto); }
-.metodo .reglas, .metodo .dims, .metodo .reglas li, .metodo .dims > div { border-color: var(--inv-linea); }
-.metodo .reglas li b, .metodo .dims dt { color: var(--inv-texto); }
-.metodo .reglas li, .metodo .dims dd { color: var(--inv-texto-2); }
 
 /* Cifras grandes */
 .cifras { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin: 0 0 72px; padding-bottom: 56px; border-bottom: 1px solid var(--inv-linea, var(--linea)); }
@@ -262,7 +246,7 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .tarjeta-srv p { margin: 0; color: var(--texto-2); font-size: 16px; }
 
 /* ---------- Equipo ---------- */
-.caras { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-bottom: 32px; }
+.caras { list-style: none; display: grid; grid-template-columns: repeat(5, 1fr); gap: 24px; margin-bottom: 32px; }
 .caras .persona { display: block; }
 .caras .foto { width: 100%; aspect-ratio: 1; max-width: 200px; }
 .caras h3 { font-size: 21px; margin: 14px 0 2px; }
@@ -389,8 +373,8 @@ h4 { font: 600 20px/1.35 var(--sans); margin: 0; }
 .kpi .d { font-size: 13px; color: var(--texto-2); }
 .graficas { display: grid; grid-template-columns: 1.4fr 1fr; gap: 16px; }
 .graf { background: var(--superficie); border: 1px solid var(--linea); border-radius: var(--r-ctl); padding: 16px; position: relative; }
-.graf h4 { font-size: 15px; margin-bottom: 12px; }
-.graf h4 small { font-weight: 400; color: var(--texto-2); margin-left: 6px; }
+.graf .graf-t { font: 600 15px/1.35 var(--sans); margin-bottom: 12px; }
+.graf .graf-t small { font-weight: 400; color: var(--texto-2); margin-left: 6px; }
 .graf svg { width: 100%; height: auto; overflow: visible; }
 .graf .eje { font: 500 12px var(--sans); fill: var(--texto-2); }
 .graf .base { stroke: var(--linea); }
@@ -455,11 +439,6 @@ table.tabla { width: 100%; border-collapse: collapse; font-size: 14px; min-width
 .compromisos p { font-size: 16px; margin: 0; color: var(--texto-2); }
 
 /* ---------- Equipo ---------- */
-.equipo { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.equipo .foto { width: 120px; aspect-ratio: 1; border-radius: var(--r-caja); background: var(--banda); border: 1px dashed var(--linea-fuerte); }
-.equipo h3 { font-size: 23px; margin: 16px 0 2px; }
-.equipo .rol { font-size: 15px; font-weight: 600; color: var(--texto-2); margin: 0 0 8px; }
-.equipo p { font-size: 16px; color: var(--texto-2); margin: 0 0 8px; }
 
 /* ---------- Preguntas frecuentes ---------- */
 .faq { max-width: 52rem; border-top: 1px solid var(--linea); }
@@ -516,7 +495,7 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .fases, .compromisos, .cifras, .tarjetas { grid-template-columns: repeat(2, 1fr); }
-  .caras { grid-template-columns: repeat(2, 1fr); }
+  .caras { grid-template-columns: repeat(3, 1fr); }
   .peli .lienzo { grid-template-columns: 1fr 1fr; }
   .peli .lienzo > :first-child { grid-column: 1 / -1; }
   .kpis { grid-template-columns: repeat(2, 1fr); }
@@ -538,8 +517,8 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
   .nav .btn { margin-top: 24px; }
   .logo .bj { display: none; }
   .hero { padding: 48px 0 64px; }
-  .hero .wrap, .ficha, .graficas, .sim, .met-rej, .reserva { grid-template-columns: 1fr; gap: 40px; }
-  .lista-dolor, .fases, .compromisos, .equipo { grid-template-columns: 1fr; }
+  .hero .wrap, .ficha, .graficas, .sim, .reserva { grid-template-columns: 1fr; gap: 40px; }
+  .fases, .compromisos { grid-template-columns: 1fr; }
   .pagina { padding: 48px 0 40px; }
   .dif, .pasos3, .tarjetas, .reglas-rej, .cierre-rej { grid-template-columns: 1fr; }
   .dolores { grid-template-columns: 1fr; gap: 0; }
@@ -555,9 +534,6 @@ footer.pie .legal { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 8p
   .cifras { grid-template-columns: 1fr 1fr; gap: 28px 20px; margin-bottom: 56px; padding-bottom: 40px; }
   .cifras dd { font-size: 24px; }
   .nido { width: 78px; height: 63px; margin-bottom: 20px; }
-  .equipo { gap: 40px; }
-  .met-rej { margin-top: 56px; }
-  .dims > div { grid-template-columns: 1fr; gap: 2px; }
   .logos-l { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .plegable > summary { grid-template-columns: 36px 1fr auto; }
   .plegable > summary .g { grid-column: 2; grid-row: 2; }

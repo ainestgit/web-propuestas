@@ -6,11 +6,17 @@
 <title>Servicios · AI Nest</title>
 <meta name="description" content="Diagnóstico, automatización de procesos, agentes, decisiones con datos, formación y dirección de IA externa, con plazo y precio cerrado.">
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#1B2E30">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="AI Nest">
+<meta property="og:title" content="Servicios · AI Nest">
+<meta property="og:description" content="Diagnóstico, automatización de procesos, agentes, decisiones con datos, formación y dirección de IA externa, con plazo y precio cerrado.">
 <link rel="icon" href="assets/favicon-final.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,500..600;1,6..72,400&family=Public+Sans:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="assets/estilos.css?v=v2-7">
-<script src="assets/sitio.js?v=v2-7" defer></script>
+<link rel="stylesheet" href="assets/estilos.css?v=v2-8">
+<script src="assets/sitio.js?v=v2-8" defer></script>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -43,8 +49,9 @@
   </div>
 </section>
 
-<section class="sec alt" id="lista" aria-label="Los seis servicios">
+<section class="sec alt" id="lista" aria-labelledby="lista-t">
   <div class="wrap">
+    <h2 id="lista-t" class="sr-only">Los seis servicios</h2>
     <div class="plegables">
 <details class="plegable" id="diagnostico">
     <summary><span class="n">01</span><h3 id="diagnostico-t">El diagnóstico</h3><span class="g">Tu mapa y tu plan, en dos semanas.</span><span class="mas" aria-hidden="true">+</span></summary>
@@ -231,15 +238,15 @@
 <div class="panel-app">
       <div class="barra-app"><span>panel · <b>Mecanizados Vega SL</b> · septiembre 2026</span><span class="ficticio">Datos ficticios</span></div>
       <div class="tabs" role="tablist" aria-label="Vistas del panel">
-        <button role="tab" id="t-res" aria-controls="v-res" aria-selected="true">Resumen</button>
-        <button role="tab" id="t-pro" aria-controls="v-pro" aria-selected="false" tabindex="-1">Procesos<span class="cnt">5</span></button>
-        <button role="tab" id="t-ban" aria-controls="v-ban" aria-selected="false" tabindex="-1">Bandeja<span class="cnt" data-cuenta>3</span></button>
-        <button role="tab" id="t-sim" aria-controls="v-sim" aria-selected="false" tabindex="-1">Simulador</button>
+        <button type="button" role="tab" id="t-res" aria-controls="v-res" aria-selected="true">Resumen</button>
+        <button type="button" role="tab" id="t-pro" aria-controls="v-pro" aria-selected="false" tabindex="-1">Procesos<span class="cnt">5</span></button>
+        <button type="button" role="tab" id="t-ban" aria-controls="v-ban" aria-selected="false" tabindex="-1">Bandeja<span class="cnt" data-cuenta>3</span></button>
+        <button type="button" role="tab" id="t-sim" aria-controls="v-sim" aria-selected="false" tabindex="-1">Simulador</button>
       </div>
       <div class="vista" id="v-res" role="tabpanel" aria-labelledby="t-res">
         <div class="kpis"><div class="kpi"><div class="t">Horas devueltas</div><div class="v">126 h</div><div class="d">+14 % respecto a agosto</div></div><div class="kpi"><div class="t">Ahorro estimado</div><div class="v">3.800 €</div><div class="d">al mes, a coste interno</div></div><div class="kpi"><div class="t">Sin intervención</div><div class="v">82 %</div><div class="d">de las ejecuciones del mes</div></div><div class="kpi"><div class="t">Avisos</div><div class="v">3</div><div class="d">pendientes · 9 resueltos este mes</div></div></div>
         <div class="graficas">
-          <div class="graf" data-serie><h4>Horas devueltas al mes<small>febrero a septiembre</small></h4><svg viewBox="0 0 640 205" role="img" aria-label="Horas devueltas al mes, de febrero a septiembre: 0, 18, 41, 62, 78, 95, 110, 126">
+          <div class="graf" data-serie><h3 class="graf-t">Horas devueltas al mes<small>febrero a septiembre</small></h3><svg viewBox="0 0 640 205" role="img" aria-label="Horas devueltas al mes, de febrero a septiembre: 0, 18, 41, 62, 78, 95, 110, 126">
       <line class="rejilla" x1="30" x2="620" y1="125.55555555555556" y2="125.55555555555556"/><line class="rejilla" x1="30" x2="620" y1="81.11111111111111" y2="81.11111111111111"/><line class="rejilla" x1="30" x2="620" y1="36.666666666666686" y2="36.666666666666686"/>
       <line class="base" x1="30" x2="620" y1="170.5" y2="170.5"/>
       <path class="area" d="M40 170.0 L120 150.0 L200 124.4 L280 101.1 L360 83.3 L440 64.4 L520 47.8 L600 30.0 L600 170 L40 170 Z"/><path class="linea" d="M40 170.0 L120 150.0 L200 124.4 L280 101.1 L360 83.3 L440 64.4 L520 47.8 L600 30.0"/>
@@ -249,7 +256,7 @@
       <text class="val" x="600" y="18" text-anchor="middle">126 h</text>
       <rect class="zona" x="0" y="0" width="80" height="180" tabindex="0" data-x="40" data-y="170.0" data-t="feb · 0 h" aria-label="feb: 0 horas"/><rect class="zona" x="80" y="0" width="80" height="180" tabindex="0" data-x="120" data-y="150.0" data-t="mar · 18 h" aria-label="mar: 18 horas"/><rect class="zona" x="160" y="0" width="80" height="180" tabindex="0" data-x="200" data-y="124.4" data-t="abr · 41 h" aria-label="abr: 41 horas"/><rect class="zona" x="240" y="0" width="80" height="180" tabindex="0" data-x="280" data-y="101.1" data-t="may · 62 h" aria-label="may: 62 horas"/><rect class="zona" x="320" y="0" width="80" height="180" tabindex="0" data-x="360" data-y="83.3" data-t="jun · 78 h" aria-label="jun: 78 horas"/><rect class="zona" x="400" y="0" width="80" height="180" tabindex="0" data-x="440" data-y="64.4" data-t="jul · 95 h" aria-label="jul: 95 horas"/><rect class="zona" x="480" y="0" width="80" height="180" tabindex="0" data-x="520" data-y="47.8" data-t="ago · 110 h" aria-label="ago: 110 horas"/><rect class="zona" x="560" y="0" width="80" height="180" tabindex="0" data-x="600" data-y="30.0" data-t="sep · 126 h" aria-label="sep: 126 horas"/>
     </svg><div class="tip" aria-hidden="true"></div></div>
-          <div class="graf"><h4>Por proceso<small>horas al mes</small></h4>
+          <div class="graf"><h3 class="graf-t">Por proceso<small>horas al mes</small></h3>
             <ul class="barras"><li><span>Facturas de proveedor</span><b>48 h</b><i style="--v:100%"></i></li><li><span>Reclamación de cobros</span><b>31 h</b><i style="--v:65%"></i></li><li><span>Consultas de clientes</span><b>25 h</b><i style="--v:52%"></i></li><li><span>Informe comercial semanal</span><b>22 h</b><i style="--v:46%"></i></li></ul>
             <ul class="feed"><li><time>09:14</time><span><b>Facturas</b> · 14 registradas, 1 pasa a Elena por importe</span></li><li><time>08:40</time><span><b>Consultas</b> · 23 respondidas, 1 pasa a Sara por falta de dato</span></li><li><time>08:05</time><span><b>Cobros</b> · 6 recordatorios enviados, 2 respuestas</span></li></ul>
           </div>
@@ -308,7 +315,7 @@
     </div>
     <div><h2>Navegación</h2><ul><li><a href="index.html">Inicio</a></li><li><a href="servicios.html">Servicios</a></li><li><a href="como-trabajamos.html">Cómo trabajamos</a></li><li><a href="equipo.html">Equipo</a></li><li><a href="datos.html">Tus datos</a></li><li><a href="reservar.html">Reserva una llamada</a></li></ul></div>
     <div><h2>Contacto</h2><ul><li><span class="hueco">[teléfono]</span></li><li><span class="hueco">[correo]</span></li><li><span class="hueco">[Razón social]</span> · <span class="hueco">[CIF]</span></li><li><span class="hueco">[Dirección]</span>, Madrid</li></ul></div>
-    <div class="legal"><span>© 2026 AI Nest</span><a href="#">[Aviso legal]</a><a href="#">[Política de privacidad]</a><a href="#">[Cookies]</a></div>
+    <div class="legal"><span>© 2026 AI Nest</span><span class="hueco">[Aviso legal]</span><span class="hueco">[Política de privacidad]</span><span class="hueco">[Cookies]</span></div>
   </div>
 </footer>
 </body>
