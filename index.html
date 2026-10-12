@@ -13,6 +13,8 @@
   h1 { font-size:34px; line-height:1.15; margin:0 0 12px; font-weight:600; }
   .intro { color:var(--ink2); max-width:40rem; margin:0 0 32px; }
   .versiones { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+  .versiones.una { grid-template-columns:1fr; }
+  a.tarjeta.destacada { border-color:var(--musgo); border-width:2px; }
   a.tarjeta { display:block; background:var(--sup); border:1px solid var(--line); border-radius:12px; padding:24px; color:inherit; text-decoration:none; }
   a.tarjeta:hover { border-color:var(--ink2); }
   a.tarjeta:focus-visible { outline:2px solid var(--musgo); outline-offset:3px; }
@@ -28,13 +30,16 @@
 <body>
 <main>
   <h1>Propuestas de la web de AI Nest</h1>
-  <p class="intro">Dos versiones de la página para comparar antes de decidir. Ninguna de las dos es la web publicada en ainest.es.</p>
+  <p class="intro">Versiones de la web para comparar antes de decidir. Ninguna es la web publicada en ainest.es.</p>
   <div class="versiones">
     <a class="tarjeta" href="pedro/"><span class="etq">pedro</span><h2>Versión de Pedro</h2><p>La web actual, tal como estaba el 1 de octubre de 2026.</p></a>
-    <a class="tarjeta" href="juan/"><span class="etq">juan</span><h2>Versión de Juan</h2><p>Paleta B, más corta y con bloques de datos, equipo y preguntas.</p></a>
+    <a class="tarjeta" href="juan/"><span class="etq">juan v1</span><h2>Versión de Juan, una página</h2><p>Paleta B, más corta y con bloques de datos, equipo y preguntas.</p></a>
+  </div>
+  <div class="versiones una">
+    <a class="tarjeta destacada" href="juan-v2/"><span class="etq">juan v2 · la más reciente</span><h2>Versión de Juan en pestañas</h2><p>Inicio, Servicios, Cómo trabajamos, Equipo, Tus datos y Reserva. Junta lo que dijo cada uno el 30/09, el 07/10 y el 09/10.</p></a>
   </div>
   <a class="comparar" href="comparar.html"><span>Ver las dos lado a lado</span><span aria-hidden="true">→</span></a>
-  <p class="nota">Datos de los ejemplos ficticios. Los textos en amarillo de la versión de Juan son huecos pendientes de confirmar. Lista de cambios de Juan: <a href="https://github.com/ainestgit/web-propuestas/blob/main/juan/CAMBIOS.md">CAMBIOS.md</a>.</p>
+  <p class="nota">Datos de los ejemplos ficticios. Los textos en amarillo de la versión de Juan son huecos pendientes de confirmar. Cambios de Juan: <a href="https://github.com/ainestgit/web-propuestas/blob/main/juan-v2/CAMBIOS.md">v2</a> · <a href="https://github.com/ainestgit/web-propuestas/blob/main/juan/CAMBIOS.md">v1</a>. Narrativa de la v2: <a href="https://github.com/ainestgit/web-propuestas/blob/main/juan-v2/NARRATIVA.md">NARRATIVA.md</a>.</p>
 </main>
 </body>
 </html>

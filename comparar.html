@@ -24,10 +24,18 @@
 <body>
 <header>
   <strong>Pedro (la web actual) vs Juan (propuesta)</strong>
+  <label>Versión de Juan
+    <select id="version">
+      <option value="juan-v2" selected>v2 · en pestañas</option>
+      <option value="juan">v1 · una página</option>
+    </select>
+  </label>
   <label>Sección
     <select id="seccion">
       <option value="">Inicio</option>
       <option value="metodo" selected>Método</option>
+      <option value="servicios">Servicios</option>
+      <option value="contacto">Reserva</option>
     </select>
   </label>
   <button data-vista="ambas" aria-pressed="true">Ambas</button>
@@ -36,22 +44,26 @@
 </header>
 <main id="marco">
   <section><h2>Pedro — la web actual, 1-oct-2026</h2><iframe id="a" title="Versión de Pedro"></iframe></section>
-  <section><h2>Juan — propuesta con la paleta B</h2><iframe id="b" title="Versión de Juan"></iframe></section>
+  <section><h2 id="b-t">Juan — propuesta con la paleta B</h2><iframe id="b" title="Versión de Juan"></iframe></section>
 </main>
 <script>
-  const fuentes = { a: 'pedro/index.html', b: 'juan/index.html' };
   const sel = document.getElementById('seccion');
-  // Rellena el selector con las secciones que tenga la versión de Pedro
-  fetch(fuentes.a).then(r => r.text()).then(html => {
-    const ids = [...html.matchAll(/id="([a-z][\w-]*)"/g)].map(m => m[1]);
-    const enlaces = [...html.matchAll(/href="#([\w-]+)"/g)].map(m => m[1]);
-    [...new Set(enlaces)].filter(id => ids.includes(id) && id !== 'metodo').forEach(id => sel.add(new Option(id[0].toUpperCase() + id.slice(1), id)));
-  }).catch(() => {});
+  const ver = document.getElementById('version');
+  // La v2 reparte las secciones en páginas: cada sección apunta a su pestaña
+  const paginasV2 = { '': 'index.html', metodo: 'como-trabajamos.html', servicios: 'servicios.html', contacto: 'reservar.html' };
+  function ruta(lado) {
+    const s = sel.value;
+    if (lado === 'a') return 'pedro/index.html' + (s ? '#' + s : '');
+    if (ver.value === 'juan-v2') return 'juan-v2/' + paginasV2[s];
+    return 'juan/index.html' + (s ? '#' + s : '');
+  }
   function cargar() {
-    const h = sel.value ? '#' + sel.value : '';
-    for (const k in fuentes) document.getElementById(k).src = fuentes[k] + h;
+    document.getElementById('a').src = ruta('a');
+    document.getElementById('b').src = ruta('b');
+    document.getElementById('b-t').textContent = ver.value === 'juan-v2' ? 'Juan v2 — en pestañas' : 'Juan v1 — una página';
   }
   sel.addEventListener('change', cargar);
+  ver.addEventListener('change', cargar);
   document.querySelectorAll('[data-vista]').forEach(b => b.addEventListener('click', () => {
     document.getElementById('marco').className = b.dataset.vista === 'ambas' ? '' : b.dataset.vista;
     document.querySelectorAll('[data-vista]').forEach(x => x.setAttribute('aria-pressed', x === b));
